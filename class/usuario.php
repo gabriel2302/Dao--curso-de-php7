@@ -37,11 +37,13 @@
 		public function loadById($id){
 
 			$sql = new Sql();
-			$result = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario=:ID", array(":ID" => $id));
+			$results = $sql->select("SELECT * FROM tb_usuarios WHERE idusuario=:ID", array(
+				":ID" => $id
+			));
 			
 
-			if (count($result) >0){
-				$row = $result[0];
+			if (count($results) >0){
+				$row = $results[0];
 				$this->setIdusuario($row['idusuario']);
 				$this->setDeslogin($row['deslogin']);
 				$this->setDessenha($row['dessenha']);
@@ -53,7 +55,7 @@
 				"idusuario"=>$this->getIdusuario(),
 				"deslogin"=>$this->getDeslogin(),
 				"dessenha"=>$this->getDessenha(),
-				"dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i")
+				"dtcadastro"=>$this->getDtcadastro()->format("d /m/ Y H:i")
 			));
 		}
 	}
