@@ -16,6 +16,23 @@ require_once("config.php");
 // $search = Usuario::search("s");//busca por caracteres 
 // echo json_encode($search);
 
-$usuario = new Usuario();//carrega os valores validando campos usuário e senha
-$usuario->login("dsadsa","lindo");
+// $usuario = new Usuario();//carrega os valores validando campos usuário e senha
+// $usuario->login("dsadsa","lindo");
+// echo $usuario;
+
+
+// $aluno = new Usuario();//fazendo insert no banco
+// $aluno->setDeslogin("Gabriel");
+// $aluno->setDessenha("1234567");
+// $aluno->insert();
+// echo $aluno;
+
+// $aluno = new Usuario("Gabriel2", "root");//método construtor
+// $aluno->insert();
+// echo $aluno;
+
+$usuario= new Usuario();
+
+$usuario->loadById(8);
+$usuario->update("Ricardo","adfashsa");
 echo $usuario;
